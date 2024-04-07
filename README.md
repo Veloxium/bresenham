@@ -12,8 +12,6 @@ This project provides a simple implementation of the Bresenham algorithm and cal
 
 The latest feature added to this project is a line chart that visualizes the calculated values of `p`, `x`, and `y` as the line is drawn. This enhances the understanding of how the Bresenham algorithm works by providing a graphical representation of its calculations.
 
-#### Usage
-
 with the following required parameters:
 
 - `x1`: x-coordinate of the starting point
@@ -21,7 +19,7 @@ with the following required parameters:
 - `x2`: x-coordinate of the ending point
 - `y2`: y-coordinate of the ending point
 
-The function returns an array of objects, where each object represents a point on the line with properties `p`, `x`, and `y`. 
+The function returns an array of objects, thats represents a point on the line with properties `p`, `x`, and `y`. 
 
 ## Contributing
 
