@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algoritma Bresenham by Veloxium</title>
+    <link rel="icon" href="https://em-content.zobj.net/thumbs/240/twitter/348/moai_1f5ff.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section>
+      <div class="main">
+        <p class="title">Algoritma Bresenham</p>
+        <p class="cr" >dibuat oleh : veloxium 🗿</p>
+        <div class="main-text">
+          <p>Silahkan Masukan Nilai Terlebih Dahulu</p>
+          <div>
+            <div class="input-group mb-3">
+              <span class="input-group-text">X1</span>
+              <input
+                id="x1"
+                type="text"
+                class="form-control"
+                placeholder="Nilai X1"
+                aria-label="Nilai X1"
+              />
+              <span class="input-group-text">Y1</span>
+              <input
+                id="y1"
+                type="text"
+                class="form-control"
+                placeholder="Nilai Y1"
+                aria-label="Nilai Y1"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="input-group mb-3">
+              <span class="input-group-text">X2</span>
+              <input
+                id="x2"
+                type="text"
+                class="form-control"
+                placeholder="Nilai X2"
+                aria-label="Nilai X2"
+              />
+              <span class="input-group-text">Y2</span>
+              <input
+                id="y2"
+                type="text"
+                class="form-control"
+                placeholder="Nilai Y2"
+                aria-label="Nilai Y2"
+              />
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="cbutton" onclick="hitung()">
+              Submit
+            </button>
+            <p class="kosong" id="kosong">Nilai Tidak Boleh Kosong 🤬</p>
+          </div>
+        </div>
+        <div id="showhasil" class="showhasil">
+          <p>Hasil Perhitungan :</p>
+          <p id="mtext"></p>
+          <table class="table table-bordered border-secondary">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">P</th>
+                <th scope="col">X</th>
+                <th scope="col">Y</th>
+              </tr>
+            </thead>
+            <tbody id="hasil"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <footer>
+        <a href="https://github.com/Veloxium" target="_blank" rel="noopener noreferrer">to github profile</a></footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
