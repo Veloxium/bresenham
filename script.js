@@ -22,6 +22,23 @@ function hitung() {
     showhasil.style.display = "none";
     kosong.style.animation = "shake 0.1s infinite alternate";
     kosong.style.display = "inline-flex";
+    kosong.innerHTML = "Nilai Tidak Boleh Kosong 🤬";
+    setTimeout(function () {
+      kosong.style.animation = "none";
+    }, 600);
+    return;
+  }
+
+  if (
+    isNaN(inputx1.value) ||
+    isNaN(inputy1.value) ||
+    isNaN(inputx2.value) ||
+    isNaN(inputy2.value)
+  ) {
+    showhasil.style.display = "none";
+    kosong.style.animation = "shake 0.1s infinite alternate";
+    kosong.style.display = "inline-flex";
+    kosong.innerHTML = "Nilai Hanya Boleh Angka 🤬";
     setTimeout(function () {
       kosong.style.animation = "none";
     }, 600);
