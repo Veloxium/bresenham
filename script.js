@@ -5,7 +5,7 @@ var inputx1 = document.getElementById("x1");
 var inputy1 = document.getElementById("y1");
 var inputx2 = document.getElementById("x2");
 var inputy2 = document.getElementById("y2");
-var mtext = document.getElementById("mtext"); 
+var mtext = document.getElementById("mtext");
 var submit = document.getElementById("submit");
 var result = [];
 
@@ -149,102 +149,21 @@ function hitung() {
   });
 
   showhasil.style.display = "block";
+  chartbuilder();
 }
 
-// function hitung() {
-//   var x1 = parseInt(inputx1.value);
-//   var y1 = parseInt(inputy1.value);
-//   var x2 = parseInt(inputx2.value);
-//   var y2 = parseInt(inputy2.value);
+function chartbuilder() {
+  var chart = new CanvasJS.Chart("chartContainer", {
+    data: [
+      {
+        type: "line",
+        lineThickness: 2,
+        dataPoints: result.map((item) => {
+          return { x: Math.round(item.x), y: Math.round(item.y) };
+        }),
+      },
+    ],
+  });
 
-//   var m = (y2 - y1) / (x2 - x1);
-//   console.log("m = " + m);
-
-//   if (m > 1) {
-//     var dx = x2 - x1;
-//     var dy = y2 - y1;
-//     var d1 = 2 * dx;
-//     var d2 = 2 * (dx - dy);
-//     var p = d1 - dy;
-//     var x = x1;
-//     var y = y1;
-//     console.log("p = " + p + " x = " + x + " y = " + y);
-//     for (var y = y1 + 1; y <= y2; y++) {
-//       if (p >= 0) {
-//         p = p + d2;
-//         x = x + 1;
-//         console.log("p = " + p + " x = " + x + " y = " + y);
-//       } else {
-//         p = p + d1;
-//         console.log("p = " + p + " x = " + x + " y = " + y);
-//       }
-//     }
-//   } else if (m > 0 && m < 1) {
-//     var dx = x2 - x1;
-//     var dy = y2 - y1;
-//     var d1 = 2 * dy;
-//     var d2 = 2 * (dx - dy);
-//     var p = d1 - dx;
-//     var x = x1;
-//     var y = y1;
-//     console.log("p = " + p + " x = " + x + " y = " + y);
-//     for (var x = x1 + 1; x <= x2; x++) {
-//       if (p >= 0) {
-//         p = p - d2;
-//         y = y + 1;
-//         console.log("p = " + p + " x = " + x + " y = " + y);
-//       } else {
-//         p = p + d1;
-//         console.log("p = " + p + " x = " + x + " y = " + y);
-//       }
-//     }
-//   }
-// }
-
-// var x1 = 0;
-// var y1 = 1;
-// var x2 = 5;
-// var y2 = 7;
-
-// var m = (y2 - y1) / (x2 - x1);
-// console.log("m = " + m);
-
-// if (m > 1) {
-//   var dx = x2 - x1;
-//   var dy = y2 - y1;
-//   var d1 = 2 * dx;
-//   var d2 = 2 * (dx - dy);
-//   var p = d1 - dy;
-//   var x = x1;
-//   var y = y1;
-//   console.log("p = " + p + " x = " + x + " y = " + y);
-//   for (var y = y1 + 1; y <= y2; y++) {
-//     if (p >= 0) {
-//       p = p + d2;
-//       x = x + 1;
-//       console.log("p = " + p + " x = " + x + " y = " + y);
-//     } else {
-//       p = p + d1;
-//       console.log("p = " + p + " x = " + x + " y = " + y);
-//     }
-//   }
-// } else if (m > 0 && m < 1) {
-//   var dx = x2 - x1;
-//   var dy = y2 - y1;
-//   var d1 = 2 * dy;
-//   var d2 = 2 * (dx - dy);
-//   var p = d1 - dx;
-//   var x = x1;
-//   var y = y1;
-//   console.log("p = " + p + " x = " + x + " y = " + y);
-//   for (var x = x1 + 1; x <= x2; x++) {
-//     if (p >= 0) {
-//       p = p - d2;
-//       y = y + 1;
-//       console.log("p = " + p + " x = " + x + " y = " + y);
-//     } else {
-//       p = p + d1;
-//       console.log("p = " + p + " x = " + x + " y = " + y);
-//     }
-//   }
-// }
+  chart.render();
+}
