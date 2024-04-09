@@ -1,13 +1,13 @@
-var hasil = document.getElementById("hasil");
-var showhasil = document.getElementById("showhasil");
-var kosong = document.getElementById("kosong");
-var inputx1 = document.getElementById("x1");
-var inputy1 = document.getElementById("y1");
-var inputx2 = document.getElementById("x2");
-var inputy2 = document.getElementById("y2");
-var mtext = document.getElementById("mtext");
-var submit = document.getElementById("submit");
-var result = [];
+let hasil = document.getElementById("hasil");
+let showhasil = document.getElementById("showhasil");
+let kosong = document.getElementById("kosong");
+let inputx1 = document.getElementById("x1");
+let inputy1 = document.getElementById("y1");
+let inputx2 = document.getElementById("x2");
+let inputy2 = document.getElementById("y2");
+let mtext = document.getElementById("mtext");
+let submit = document.getElementById("submit");
+let result = [];
 
 function hitung() {
   result = [];
@@ -47,22 +47,22 @@ function hitung() {
 
   kosong.style.display = "none";
 
-  var x1 = parseInt(inputx1.value);
-  var y1 = parseInt(inputy1.value);
-  var x2 = parseInt(inputx2.value);
-  var y2 = parseInt(inputy2.value);
+  let x1 = parseInt(inputx1.value);
+  let y1 = parseInt(inputy1.value);
+  let x2 = parseInt(inputx2.value);
+  let y2 = parseInt(inputy2.value);
 
-  var m = (y2 - y1) / (x2 - x1);
+  let m = (y2 - y1) / (x2 - x1);
   if (m > 1) {
-    var dx = x2 - x1;
-    var dy = y2 - y1;
-    var d1 = 2 * dx;
-    var d2 = 2 * (dx - dy);
-    var p = d1 - dy;
-    var x = x1;
-    var y = y1;
+    let dx = x2 - x1;
+    let dy = y2 - y1;
+    let d1 = 2 * dx;
+    let d2 = 2 * (dx - dy);
+    let p = d1 - dy;
+    let x = x1;
+    let y = y1;
 
-    var firstObj = {
+    let firstObj = {
       p: p,
       x: x,
       y: y,
@@ -70,11 +70,11 @@ function hitung() {
 
     result.push(firstObj);
 
-    for (var y = y1 + 1; y <= y2; y++) {
+    for (let y = y1 + 1; y <= y2; y++) {
       if (p >= 0) {
         p = p + d2;
         x = x + 1;
-        var obj = {
+        let obj = {
           p: p,
           x: x,
           y: y,
@@ -82,7 +82,7 @@ function hitung() {
         result.push(obj);
       } else {
         p = p + d1;
-        var obj = {
+        let obj = {
           p: p,
           x: x,
           y: y,
@@ -91,15 +91,15 @@ function hitung() {
       }
     }
   } else if (m > 0 && m < 1) {
-    var dx = x2 - x1;
-    var dy = y2 - y1;
-    var d1 = 2 * dy;
-    var d2 = 2 * (dx - dy);
-    var p = d1 - dx;
-    var x = x1;
-    var y = y1;
+    let dx = x2 - x1;
+    let dy = y2 - y1;
+    let d1 = 2 * dy;
+    let d2 = 2 * (dx - dy);
+    let p = d1 - dx;
+    let x = x1;
+    let y = y1;
 
-    var firstObj = {
+    let firstObj = {
       p: p,
       x: x,
       y: y,
@@ -107,11 +107,11 @@ function hitung() {
 
     result.push(firstObj);
 
-    for (var x = x1 + 1; x <= x2; x++) {
+    for (let x = x1 + 1; x <= x2; x++) {
       if (p >= 0) {
         p = p - d2;
         y = y + 1;
-        var obj = {
+        let obj = {
           p: p,
           x: x,
           y: y,
@@ -119,7 +119,7 @@ function hitung() {
         result.push(obj);
       } else {
         p = p + d1;
-        var obj = {
+        let obj = {
           p: p,
           x: x,
           y: y,
@@ -153,7 +153,7 @@ function hitung() {
 }
 
 function chartbuilder() {
-  var chart = new CanvasJS.Chart("chartContainer", {
+  let chart = new CanvasJS.Chart("chartContainer", {
     data: [
       {
         type: "line",
